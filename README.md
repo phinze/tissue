@@ -1,6 +1,6 @@
 # Tissue
 
-A Github Issues workflow.
+A little tool to support a Github Issue/PR workflow.
 
 ## Background
 
@@ -28,10 +28,13 @@ metadata into them, and then `cd` you there.
 
 ### PR URLs: Stage for Build / Test / Review
 
+(NOT IMPLEMENTED YET)
+
+ * Locate the local source dir.
  * Save any WIP present in the source dir.
  * Fetch latest master so diff will be current.
  * Fetch and check out PR branch with descriptive name.
-
+ * `cd` to source dir.
 
 ## Config
 
