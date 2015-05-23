@@ -8,7 +8,7 @@ import (
 )
 
 func issuesRoot() string {
-	issuesRoot := os.Getenv("ISSUES_ROOT")
+	issuesRoot := os.Getenv("TISSUE_ISSUES_ROOT")
 	if issuesRoot == "" {
 		issuesRoot = "~/issues"
 	}
