@@ -14,10 +14,17 @@ func HandleURL(argUrl string) {
 
 	parts := strings.SplitN(url.Path[1:], "/", 4)
 
-	switch parts[2] {
-	case "issues":
-		HandleIssue(parts[0], parts[1], parts[3])
+	switch len(parts) {
+	case 2:
+		HandleRepo(parts[0], parts[1])
+	case 4:
+		switch parts[2] {
+		case "issues":
+			HandleIssue(parts[0], parts[1], parts[3])
+		default:
+			log.Fatalf("Cannot handle object type: %q", parts[2])
+		}
 	default:
-		log.Fatalf("Cannot handle object type: %q", parts[2])
+		log.Fatalf("Unknown URL type: %s", url)
 	}
 }
